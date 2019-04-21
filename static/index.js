@@ -1,3 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  alert("Hello JS!");
+  document.getElementById("dogArea").innerHTML = "loading dogs...";
+  fetch("/api/getdogs")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      document.getElementById('dogArea').innerHTML = data.message;
+    });
 });
