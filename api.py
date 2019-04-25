@@ -14,7 +14,7 @@ class GetDogsHandler(webapp2.RequestHandler):
     dog_info = {
       'dogs': [
         DogDict("fido", "good"),
-        DogDict("fluffy", "very_good"),
+        DogDict("fluffy", "veryGood"),
         DogDict("zappp", "sleepy")
       ]
     }
