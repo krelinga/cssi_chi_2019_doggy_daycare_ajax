@@ -2,6 +2,7 @@ import webapp2
 import json
 import time
 
+
 def DogDict(name, status):
   return {'name': name, 'status': status }
 
