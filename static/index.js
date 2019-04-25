@@ -5,6 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then((data) => {
-      document.getElementById('dogArea').innerHTML = data.message;
+      document.getElementById('dogArea').innerHTML = data.dogs;
     });
 });
