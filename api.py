@@ -11,7 +11,8 @@ def LoginDict(data, uri):
   else:
     return { 'login_url': users.create_login_url(uri) }
 
-
+# FWIW NDB has a to_dict() method on model classes, so that can get us to
+# this kind of dict w/ real data.
 def DogDict(name, status):
   return {'name': name, 'status': status }
 
