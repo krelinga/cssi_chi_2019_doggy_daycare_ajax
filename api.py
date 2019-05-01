@@ -1,6 +1,15 @@
 import webapp2
 import json
 import time
+from google.appengine.api import users
+
+
+def LoginDict(data, uri):
+  current_user = users.get_current_user()
+  if current_user:
+    return { 'data': data, 'logout_url': users.create_logout_url(uri) }
+  else:
+    return { 'login_url': users.create_login_url(uri) }
 
 
 def DogDict(name, status):
@@ -19,7 +28,7 @@ class GetDogsHandler(webapp2.RequestHandler):
         DogDict("zappp", "sleepy")
       ]
     }
-    self.response.write(json.dumps(dog_info))
+    self.response.write(json.dumps(LoginDict(dog_info, '/')))
 
 
 app = webapp2.WSGIApplication([

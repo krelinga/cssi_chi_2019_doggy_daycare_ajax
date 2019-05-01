@@ -4,11 +4,19 @@
     <script src="/index.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script id="dogAreaTemplate" type="text/x-handlebars-template">
-      <ul>
-        {{#each dogs}}
-          <li>{{name}}: <span class="{{status}}Status">{{status}}</span></li>
-        {{/each}}
-      </ul>
+      {{#if login_url}}
+        <a href="{{login_url}}">Log In</a>
+      {{/if}}
+      {{#if logout_url}}
+        <a href="{{logout_url}}">Log Out</a>
+      {{/if}}
+      {{#if data}}
+        <ul>
+          {{#each data.dogs}}
+            <li>{{name}}: <span class="{{status}}Status">{{status}}</span></li>
+          {{/each}}
+        </ul>
+      {{/if}}
     </script>
   </head>
   <body>
